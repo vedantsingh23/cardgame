@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Flipping</title>
+<style>
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #f1f1f1;
+    color: black;
+    z-index: 2;
+}
+
+.card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+<div class="card-container">
+<div class="card" id="card">
+    <div class="card-face card-front">
+    <h1>Front</h1>
+    </div>
+    <div class="card-face card-back">
+    <h1>Back</h1>
+    </div>
+</div>
+</div>
+<script>
+window.onload = function() {
+    var card = document.getElementById('card');
+    card.addEventListener('click', function() {
+    card.classList.toggle('flipped');
+    setTimeout(function() {
+        card.classList.remove('flipped');
+      }, 5000); // 5000 milliseconds = 5 seconds
+    });
+};
+</script>
+</body>
+</html>
