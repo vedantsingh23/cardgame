@@ -3,16 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Card Flipping</title>
+<title>Memory Card Game</title>
 <link rel="stylesheet" href="card.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Card Memory Game</h2>
-        <div class="cardgame"></div>
-        <button class="reset">Reset</button>
-    </div>
-<script src="cardd.js">
-</script>
+<h1>Memory Cards</h1>
+<div class="card-container" id="card-container"></div>
+<div class="bruh">
+<p>Score: <span class="score">0</span></p>
+<div id="moves">Moves: 0</div>
+<div id="timer">Time: 0 seconds</div>
+<div class="actions">
+    <button onclick="restart()">Restart</button>
+</div>
+</div>
+<script src="cardd.js"></script>
 </body>
 </html>
